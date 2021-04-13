@@ -59,6 +59,11 @@ body {
   }
 }
 
+* {
+  // overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
 /*///////////////// HEADER /////////////////*/
 header {
   min-height: 100vh;
@@ -193,16 +198,16 @@ header {
       @extend %dispFlexCenter;
     }
 
-    &:nth-child(1) > a svg {
+    &:nth-child(1):hover > a svg {
       position: absolute;
-      top: 1px;
-      right: 1px;
+      transform: translate(20%, -20%);
       height: 21px;
     }
 
     svg {
-      height: 15px;
+      height: 17px;
       color: $color-1;
+      transition: all 0.4s ease;
     }
   }
 }
@@ -352,6 +357,7 @@ main {
         button {
           padding: 0 20px;
           border: none;
+          transition: 0.7s;
         }
 
         label:focus,

@@ -59,6 +59,10 @@ body hr {
   background: linear-gradient(90deg, #003366 0%, #4781bf 50%, #003366 100%);
 }
 
+* {
+  scroll-behavior: smooth;
+}
+
 /*///////////////// HEADER /////////////////*/
 header {
   min-height: 100vh;
@@ -258,16 +262,16 @@ header #productions-container #cards a {
   height: 100%;
 }
 
-.social-icons div:nth-child(1) > a svg {
+.social-icons div:nth-child(1):hover > a svg {
   position: absolute;
-  top: 1px;
-  right: 1px;
+  transform: translate(20%, -20%);
   height: 21px;
 }
 
 .social-icons div svg {
-  height: 15px;
+  height: 17px;
   color: #003366;
+  transition: all 0.4s ease;
 }
 
 /*/////////////////// MAIN /////////////////////*/
@@ -406,6 +410,7 @@ main #contact-container #contact form textarea,
 main #contact-container #contact form button {
   padding: 0 20px;
   border: none;
+  transition: 0.7s;
 }
 
 main #contact-container #contact form label:focus,
