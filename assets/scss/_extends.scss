@@ -1,0 +1,17 @@
+%dispFlexHor {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+%dispFlexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+%dispFlexVert {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
