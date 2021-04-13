@@ -40,7 +40,7 @@ body h1 {
 }
 
 body .h2 {
-  margin: 0 auto;
+  margin: 0 auto 5vh;
   justify-content: start;
   background: #f8f8f1;
   border-radius: 20px;
@@ -148,10 +148,10 @@ header nav .social-icons {
 header #productions-container {
   position: relative;
   z-index: 0;
-  min-height: 85vh;
+  min-height: 560px;
   background: #c8e5f7;
   align-items: start;
-  padding: 0 7%;
+  padding: 7vh 7%;
 }
 
 header #productions-container * {
@@ -168,8 +168,15 @@ header #productions-container h2 {
 
 header #productions-container #cards {
   width: 100%;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
   align-items: start;
+}
+
+header #productions-container #cards > * {
+  min-width: 300px;
+  width: 25%;
+  padding: 20px;
 }
 
 header #productions-container #cards .description {
@@ -200,7 +207,7 @@ header #productions-container #cards #card-1 {
 }
 
 header #productions-container #cards #card-1 .thumbnail {
-  width: 25vw;
+  width: 100%;
   height: 200px;
   border-radius: 20px;
   background: url("../img/pyrenees_small.png") center/cover;
@@ -230,7 +237,7 @@ header #productions-container #cards #card-2 {
 }
 
 header #productions-container #cards #card-2 .thumbnail {
-  width: 25vw;
+  width: 100%;
   height: 200px;
   border-radius: 20px;
   background: url("../img/gaming_campus_small.png") center/cover;
@@ -260,7 +267,7 @@ header #productions-container #cards #card-3 {
 }
 
 header #productions-container #cards #card-3 .thumbnail {
-  width: 25vw;
+  width: 100%;
   height: 200px;
   border-radius: 20px;
   background: url("#") center/cover;
@@ -276,6 +283,11 @@ header #productions-container #cards a {
   width: 100%;
 }
 
+.social-icons .linkedin-icon:hover,
+.social-icons .tumblr-icon:hover {
+  box-shadow: 0 0 3px 4px rgba(248, 248, 248, 0.37);
+}
+
 .social-icons div {
   width: 30px;
   height: 30px;
@@ -283,6 +295,7 @@ header #productions-container #cards a {
   background: #f8f8f1;
   border-radius: 50%;
   position: relative;
+  transition: 0.4s ease;
 }
 
 .social-icons div a {
