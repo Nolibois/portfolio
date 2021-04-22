@@ -1,17 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Exo&display=swap");
-footer #footer-top, main #contact-container, main #about-container #about .langages-icons, main #about-container, .social-icons, header #productions-container #cards, header nav #nav-container, header nav ul {
+header nav ul, header nav #nav-container, #productions-container #cards, .social-icons, main #about-container, main #about-container #about .langages-icons, main #contact-container, footer #footer-top {
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
-main #about-container #picture, .social-icons div a, .social-icons div, body .h2 {
+body .h2, .social-icons div, .social-icons div a, main #about-container #picture {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-main #contact-container #contact, main #about-container #about > div:nth-child(3), main #about-container #about, header #productions-container #cards #card-4, header #productions-container #cards #card-3, header #productions-container #cards #card-2, header #productions-container #cards #card-1, header #productions-container #cards .description, header #productions-container, header nav {
+header nav, #productions-container, #productions-container #cards .description, #productions-container #cards #card-1, #productions-container #cards #card-2, #productions-container #cards #card-3, #productions-container #cards #card-4, main #about-container #about, main #about-container #about > div:nth-child(3), main #contact-container #contact {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -26,16 +26,20 @@ main #contact-container #contact, main #about-container #about > div:nth-child(3
 body {
   font-family: "Exo", sans-serif;
 }
+
 body li {
   list-style-type: none;
 }
+
 body a {
   text-decoration: none;
   color: #f8f8f1;
 }
+
 body h1 {
   font-size: 1.8rem;
 }
+
 body .h2 {
   margin: 0 auto 5vh;
   justify-content: start;
@@ -44,18 +48,17 @@ body .h2 {
   height: 35px;
   width: 300px;
 }
+
 body h2 {
   font-size: 1.2rem;
 }
+
 body hr {
   width: 100%;
   height: 1px;
 }
 
 /*///////////////// HEADER /////////////////*/
-header {
-  min-height: 100vh;
-}
 header nav {
   position: relative;
   z-index: 1;
@@ -67,24 +70,27 @@ header nav {
   align-items: center;
   box-shadow: 0 8px 23px 13px rgba(0, 51, 102, 0.49);
   /* hr {
-    position: absolute;
-    content: "";
-    width: 100%;
-    top: 46%;
-    height: 3px;
-    box-shadow: 0 20px 10px -7px $color-3;
-  } */
+      position: absolute;
+      content: "";
+      width: 100%;
+      top: 46%;
+      height: 3px;
+      box-shadow: 0 20px 10px -7px $color-3;
+    } */
 }
+
 header nav img {
   height: 50px;
   padding: 20px 0;
   position: relative;
   z-index: 1;
 }
+
 header nav .hr-container {
   position: relative;
   width: 100%;
 }
+
 header nav hr {
   position: absolute;
   content: "";
@@ -94,18 +100,22 @@ header nav hr {
   border: none;
   background: linear-gradient(90deg, #003366 0%, #4781bf 50%, #003366 100%);
 }
+
 header nav ul {
   width: 65%;
   min-width: 400px;
 }
+
 header nav #nav-container {
   padding: 0 15%;
   width: 100%;
   box-sizing: border-box;
 }
+
 header nav #nav-container li {
   position: relative;
 }
+
 header nav #nav-container li::after {
   position: absolute;
   content: "";
@@ -118,14 +128,28 @@ header nav #nav-container li::after {
   left: 0;
   transition: 0.5s ease;
 }
+
 header nav #nav-container li:hover::after {
   width: 100%;
 }
+
 header nav .social-icons {
   width: 30%;
   min-width: 110px;
 }
-header #productions-container {
+
+header #cv {
+  background: #003366;
+}
+
+#pdf {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px 0;
+}
+
+#productions-container {
   position: relative;
   z-index: 0;
   min-height: 560px;
@@ -133,34 +157,42 @@ header #productions-container {
   align-items: start;
   padding: 7vh 7%;
 }
-header #productions-container * {
+
+#productions-container * {
   color: black;
 }
-header #productions-container .h2 {
+
+#productions-container .h2 {
   box-shadow: 0 14px 9px -7px rgba(0, 51, 102, 0.49);
 }
-header #productions-container h2 {
+
+#productions-container h2 {
   margin: 0 auto;
 }
-header #productions-container #cards {
+
+#productions-container #cards {
   width: 100%;
   justify-content: space-evenly;
   flex-wrap: wrap;
   align-items: start;
 }
-header #productions-container #cards > * {
+
+#productions-container #cards > * {
   min-width: 300px;
   width: 25%;
   padding: 20px;
 }
-header #productions-container #cards .description {
+
+#productions-container #cards .description {
   padding-top: 20px;
   align-items: center;
 }
-header #productions-container #cards .description p {
+
+#productions-container #cards .description p {
   padding: 20px 0;
 }
-header #productions-container #cards #card-1 {
+
+#productions-container #cards #card-1 {
   /* HTML's architecture to respect: 
   <div id="card-1">
     <a href="https://exemple.com/" target="_blank">
@@ -177,17 +209,20 @@ header #productions-container #cards #card-1 {
   </div>
   */
 }
-header #productions-container #cards #card-1 .thumbnail {
+
+#productions-container #cards #card-1 .thumbnail {
   width: 100%;
   height: 200px;
   border-radius: 20px;
   background: url("../img/pyrenees_small.png") center/cover;
 }
-header #productions-container #cards #card-1 i {
+
+#productions-container #cards #card-1 i {
   font-size: 3rem;
   color: #4781bf;
 }
-header #productions-container #cards #card-2 {
+
+#productions-container #cards #card-2 {
   /* HTML's architecture to respect: 
   <div id="card-1">
     <a href="https://exemple.com/" target="_blank">
@@ -204,17 +239,20 @@ header #productions-container #cards #card-2 {
   </div>
   */
 }
-header #productions-container #cards #card-2 .thumbnail {
+
+#productions-container #cards #card-2 .thumbnail {
   width: 100%;
   height: 200px;
   border-radius: 20px;
   background: url("../img/gaming_campus_small.png") center/cover;
 }
-header #productions-container #cards #card-2 i {
+
+#productions-container #cards #card-2 i {
   font-size: 3rem;
   color: #4781bf;
 }
-header #productions-container #cards #card-3 {
+
+#productions-container #cards #card-3 {
   /* HTML's architecture to respect: 
   <div id="card-1">
     <a href="https://exemple.com/" target="_blank">
@@ -231,17 +269,20 @@ header #productions-container #cards #card-3 {
   </div>
   */
 }
-header #productions-container #cards #card-3 .thumbnail {
+
+#productions-container #cards #card-3 .thumbnail {
   width: 100%;
   height: 200px;
   border-radius: 20px;
   background: url("../img/Print_3D.png") center/cover;
 }
-header #productions-container #cards #card-3 i {
+
+#productions-container #cards #card-3 i {
   font-size: 3rem;
   color: #4781bf;
 }
-header #productions-container #cards #card-4 {
+
+#productions-container #cards #card-4 {
   /* HTML's architecture to respect: 
   <div id="card-1">
     <a href="https://exemple.com/" target="_blank">
@@ -258,17 +299,20 @@ header #productions-container #cards #card-4 {
   </div>
   */
 }
-header #productions-container #cards #card-4 .thumbnail {
+
+#productions-container #cards #card-4 .thumbnail {
   width: 100%;
   height: 200px;
   border-radius: 20px;
   background: url("#") center/cover;
 }
-header #productions-container #cards #card-4 i {
+
+#productions-container #cards #card-4 i {
   font-size: 3rem;
   color: #4781bf;
 }
-header #productions-container #cards a {
+
+#productions-container #cards a {
   height: 100%;
   width: 100%;
 }
@@ -277,6 +321,7 @@ header #productions-container #cards a {
 .social-icons .tumblr-icon:hover {
   box-shadow: 0 0 3px 4px rgba(248, 248, 248, 0.37);
 }
+
 .social-icons div {
   width: 30px;
   height: 30px;
@@ -286,15 +331,18 @@ header #productions-container #cards a {
   position: relative;
   transition: 0.4s ease;
 }
+
 .social-icons div a {
   width: 100%;
   height: 100%;
 }
+
 .social-icons div:nth-child(1):hover > a svg {
   position: absolute;
   transform: translate(20%, -20%);
   height: 21px;
 }
+
 .social-icons div svg {
   height: 17px;
   color: #003366;
@@ -306,6 +354,7 @@ main {
   /****************** ABOUT **************/
   /****************** CONTACT **************/
 }
+
 main .shadow {
   position: absolute;
   content: "";
@@ -317,6 +366,7 @@ main .shadow {
   top: 12px;
   transform: rotate(-4deg);
 }
+
 main #about-container {
   padding: 0 7%;
   height: 58.75vw;
@@ -324,19 +374,23 @@ main #about-container {
   background: #7ab9f0;
   box-sizing: border-box;
 }
+
 main #about-container #picture {
   height: 100%;
 }
+
 main #about-container #picture img {
   height: 70%;
   background: #f8f8f1;
 }
+
 main #about-container #about {
   justify-content: space-between;
   height: 70%;
   width: 50%;
   position: relative;
 }
+
 main #about-container #about .h2 {
   margin: 0;
   width: 126%;
@@ -345,25 +399,31 @@ main #about-container #about .h2 {
   box-shadow: none;
   z-index: 1;
 }
+
 main #about-container #about .h2 h2 {
   margin: 0 30px;
 }
+
 main #about-container #about > div:nth-child(3) {
   height: 80%;
   justify-content: space-between;
 }
+
 main #about-container #about .tools {
   font-size: 1rem;
   font-weight: bold;
 }
+
 main #about-container #about .langages-icons {
   background: #c8e5f7;
   border-radius: 20px;
   height: 65px;
 }
+
 main #about-container #about .langages-icons img {
   height: 40px;
 }
+
 main #contact-container {
   padding: 0 7%;
   height: 58.75vw;
@@ -371,11 +431,13 @@ main #contact-container {
   background: #c8e5f7;
   box-sizing: border-box;
 }
+
 main #contact-container #map {
   width: 20.83vw;
   height: 70%;
   background: url(../img/map_BX.png) center/cover;
 }
+
 main #contact-container #contact {
   justify-content: space-between;
   height: 70%;
@@ -383,6 +445,7 @@ main #contact-container #contact {
   box-sizing: border-box;
   position: relative;
 }
+
 main #contact-container #contact .h2 {
   margin: 0;
   width: 143%;
@@ -392,10 +455,12 @@ main #contact-container #contact .h2 {
   justify-content: flex-end;
   transform: translateX(-30%);
 }
+
 main #contact-container #contact .h2 h2 {
   margin: 0 30px;
   width: unset;
 }
+
 main #contact-container #contact .shadow {
   transform: rotateY(180deg) rotate(-4deg);
   right: 0;
@@ -403,6 +468,7 @@ main #contact-container #contact .shadow {
   width: 200px;
   top: 13px;
 }
+
 main #contact-container #contact form {
   padding-top: 10%;
   height: 100%;
@@ -412,6 +478,7 @@ main #contact-container #contact form {
   grid-gap: 3%;
   grid-template-areas: "u-n f-n" "email phone" "subject subject" "message message" "btn btn";
 }
+
 main #contact-container #contact form label,
 main #contact-container #contact form input,
 main #contact-container #contact form textarea,
@@ -420,6 +487,7 @@ main #contact-container #contact form button {
   border: none;
   transition: 0.7s;
 }
+
 main #contact-container #contact form label:focus,
 main #contact-container #contact form input:focus,
 main #contact-container #contact form textarea:focus,
@@ -428,27 +496,34 @@ main #contact-container #contact form button:focus {
   box-shadow: 0 0 8px 0 #4781bf;
   outline: none;
 }
+
 main #contact-container #contact form #user-name {
   grid-area: u-n;
   border-top-left-radius: 20px;
 }
+
 main #contact-container #contact form #first-name {
   grid-area: f-n;
   border-top-right-radius: 20px;
 }
+
 main #contact-container #contact form #email {
   grid-area: email;
 }
+
 main #contact-container #contact form #phone {
   grid-area: phone;
 }
+
 main #contact-container #contact form #subject {
   grid-area: subject;
 }
+
 main #contact-container #contact form #message {
   grid-area: message;
   padding-top: 10px;
 }
+
 main #contact-container #contact form button {
   grid-area: btn;
   border-radius: 0 0 20px 20px;
@@ -463,6 +538,7 @@ footer {
   padding: 10px 40px;
   position: relative;
 }
+
 footer hr {
   position: absolute;
   content: "";
@@ -472,24 +548,26 @@ footer hr {
   border: none;
   background: linear-gradient(90deg, #003366 0%, #4781bf 50%, #003366 100%);
 }
+
 footer #footer-top {
   padding: 20px 0;
 }
+
 footer #footer-top img {
   height: 80px;
 }
+
 footer #footer-top .social-icons {
   width: 10vw;
 }
+
 footer #author {
   text-align: right;
   color: #f8f8f1;
   padding: 20px 0;
 }
+
 footer #author a {
   color: #7ab9f0;
 }
-
-/*# sourceMappingURL=style.scss.map */
-
 /*# sourceMappingURL=style.css.map */
