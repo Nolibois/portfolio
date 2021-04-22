@@ -1,0 +1,46 @@
+@mixin displayCard($url) {
+  /* HTML's architecture to respect: 
+  <div id="card-1">
+    <a href="https://exemple.com/" target="_blank">
+      <div class="thumbnail"></div>
+      <div class="description">
+        <h3>"Title"</h3>
+        <p>...write a description...</p>
+        <div>
+          <i class="fab fa-..."></i>
+          <i class="fab fa-...-alt"></i>
+        </div>
+      </div>
+    </a>
+  </div>
+  */
+
+  .thumbnail {
+    width: 100%;
+    height: 200px;
+    border-radius: 20px;
+    background: url($url) center/cover;
+  }
+
+  i {
+    font-size: 3rem;
+    color: $color-2;
+  }
+}
+
+@mixin hrGradient($top, $height) {
+  hr {
+    position: absolute;
+    content: "";
+    width: 100%;
+    top: $top;
+    height: $height;
+    border: none;
+    background: linear-gradient(
+      90deg,
+      rgba(0, 51, 102, 1) 0%,
+      rgba(71, 129, 191, 1) 50%,
+      rgba(0, 51, 102, 1) 100%
+    );
+  }
+}
