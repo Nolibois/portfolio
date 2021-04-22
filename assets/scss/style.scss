@@ -191,6 +191,11 @@ header {
 
       #card-3 {
         @extend %dispFlexVert;
+        @include displayCard("../img/Print_3D.png");
+      }
+
+      #card-4 {
+        @extend %dispFlexVert;
         @include displayCard("#");
       }
 
