@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Exo&display=swap");
 header nav ul, header nav #nav-container, #productions-container #cards, .social-icons, main #about-container, main #about-container #about .langages-icons, main #contact-container, footer #footer-top {
   display: flex;
@@ -17,6 +18,21 @@ header nav, #productions-container, #productions-container #cards .description, 
   justify-content: space-evenly;
 }
 
+/* HTML's architecture to respect: 
+  <div id="card-1">
+    <a href="https://exemple.com/" target="_blank">
+      <div class="thumbnail"></div>
+      <div class="description">
+        <h3>"Title"</h3>
+        <p>...write a description...</p>
+        <div>
+          <i class="fab fa-..."></i>
+          <i class="fab fa-...-alt"></i>
+        </div>
+      </div>
+    </a>
+  </div>
+  */
 * {
   margin: 0;
   padding: 0;
@@ -69,14 +85,6 @@ header nav {
   text-align: center;
   align-items: center;
   box-shadow: 0 8px 23px 13px rgba(0, 51, 102, 0.49);
-  /* hr {
-      position: absolute;
-      content: "";
-      width: 100%;
-      top: 46%;
-      height: 3px;
-      box-shadow: 0 20px 10px -7px $color-3;
-    } */
 }
 
 header nav img {
@@ -192,24 +200,6 @@ header #cv {
   padding: 20px 0;
 }
 
-#productions-container #cards #card-1 {
-  /* HTML's architecture to respect: 
-  <div id="card-1">
-    <a href="https://exemple.com/" target="_blank">
-      <div class="thumbnail"></div>
-      <div class="description">
-        <h3>"Title"</h3>
-        <p>...write a description...</p>
-        <div>
-          <i class="fab fa-..."></i>
-          <i class="fab fa-...-alt"></i>
-        </div>
-      </div>
-    </a>
-  </div>
-  */
-}
-
 #productions-container #cards #card-1 .thumbnail {
   width: 100%;
   height: 200px;
@@ -220,24 +210,6 @@ header #cv {
 #productions-container #cards #card-1 i {
   font-size: 3rem;
   color: #4781bf;
-}
-
-#productions-container #cards #card-2 {
-  /* HTML's architecture to respect: 
-  <div id="card-1">
-    <a href="https://exemple.com/" target="_blank">
-      <div class="thumbnail"></div>
-      <div class="description">
-        <h3>"Title"</h3>
-        <p>...write a description...</p>
-        <div>
-          <i class="fab fa-..."></i>
-          <i class="fab fa-...-alt"></i>
-        </div>
-      </div>
-    </a>
-  </div>
-  */
 }
 
 #productions-container #cards #card-2 .thumbnail {
@@ -252,24 +224,6 @@ header #cv {
   color: #4781bf;
 }
 
-#productions-container #cards #card-3 {
-  /* HTML's architecture to respect: 
-  <div id="card-1">
-    <a href="https://exemple.com/" target="_blank">
-      <div class="thumbnail"></div>
-      <div class="description">
-        <h3>"Title"</h3>
-        <p>...write a description...</p>
-        <div>
-          <i class="fab fa-..."></i>
-          <i class="fab fa-...-alt"></i>
-        </div>
-      </div>
-    </a>
-  </div>
-  */
-}
-
 #productions-container #cards #card-3 .thumbnail {
   width: 100%;
   height: 200px;
@@ -282,29 +236,11 @@ header #cv {
   color: #4781bf;
 }
 
-#productions-container #cards #card-4 {
-  /* HTML's architecture to respect: 
-  <div id="card-1">
-    <a href="https://exemple.com/" target="_blank">
-      <div class="thumbnail"></div>
-      <div class="description">
-        <h3>"Title"</h3>
-        <p>...write a description...</p>
-        <div>
-          <i class="fab fa-..."></i>
-          <i class="fab fa-...-alt"></i>
-        </div>
-      </div>
-    </a>
-  </div>
-  */
-}
-
 #productions-container #cards #card-4 .thumbnail {
   width: 100%;
   height: 200px;
   border-radius: 20px;
-  background: url("#") center/cover;
+  background: url("../img/Vieux-Téléviseur.gif") center/cover;
 }
 
 #productions-container #cards #card-4 i {
@@ -347,12 +283,6 @@ header #cv {
   height: 17px;
   color: #003366;
   transition: all 0.4s ease;
-}
-
-/*/////////////////// MAIN /////////////////////*/
-main {
-  /****************** ABOUT **************/
-  /****************** CONTACT **************/
 }
 
 main .shadow {
@@ -476,7 +406,7 @@ main #contact-container #contact form {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 10% 10% 15% 38% 13%;
   grid-gap: 3%;
-  grid-template-areas: "u-n f-n" "email phone" "subject subject" "message message" "btn btn";
+  grid-template-areas: "u-n f-n" "email phone" "subject subject" "message message" "btn btn";
 }
 
 main #contact-container #contact form label,
@@ -532,7 +462,7 @@ main #contact-container #contact form button {
   cursor: pointer;
 }
 
-/*////////////////// FOOTER  //////////////////*/
+/*!////////////////// FOOTER  //////////////////*/
 footer {
   background: #003366;
   padding: 10px 40px;
@@ -569,5 +499,13 @@ footer #author {
 
 footer #author a {
   color: #7ab9f0;
+}
+
+/**************** @MEDIA *******************/
+@media screen and (max-width: 900px) {
+  main #about-container {
+    padding: 0;
+    height: 70vw;
+  }
 }
 /*# sourceMappingURL=style.css.map */
