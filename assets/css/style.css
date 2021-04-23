@@ -304,7 +304,7 @@ main #about-container {
   background: #7ab9f0;
   box-sizing: border-box;
   display: grid;
-  grid-template-columns: 40vw 60vw;
+  grid-template-columns: 40vw 45vw;
   grid-template-rows: 15% 27% 26% 17% 15%;
   grid-template-areas: "pict ." "pict about" "pict about" "pict icons" "pict .";
 }
@@ -328,7 +328,7 @@ main #about-container #about {
 
 main #about-container #about .h2 {
   margin: 0;
-  width: 126%;
+  width: 51.6vw;
   text-align: start;
   border-radius: 20px 0 0 20px;
   box-shadow: none;
@@ -489,11 +489,7 @@ footer #footer-nav #footer-top .social-icons {
 }
 
 footer #footer-nav hr {
-  position: absolute;
-  content: "";
-  width: 100%;
-  top: 70%;
-  height: 1px;
+  height: 2px;
   border: none;
   background: linear-gradient(90deg, #003366 0%, #4781bf 50%, #003366 100%);
 }
