@@ -261,10 +261,19 @@ main {
     height: 58.75vw;
     width: 100%;
     background: $color-3;
-    @extend %dispFlexHor;
     box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 40vw 60vw;
+    grid-template-rows: 15% 27% 26% 17% 15%;
+    grid-template-areas:
+      "pict ."
+      "pict about"
+      "pict about"
+      "pict icons"
+      "pict .";
 
     #picture {
+      grid-area: pict;
       height: 100%;
       @extend %dispFlexCenter;
 
@@ -275,10 +284,11 @@ main {
     }
 
     #about {
+      grid-area: about;
+
       @extend %dispFlexVert;
       justify-content: space-between;
-      height: 70%;
-      width: 50%;
+      width: 68%;
       position: relative;
 
       .h2 {
@@ -304,16 +314,18 @@ main {
         font-size: 1rem;
         font-weight: bold;
       }
+    }
 
-      .langages-icons {
-        @extend %dispFlexHor;
-        background: $color-4;
-        border-radius: 20px;
-        height: 65px;
+    .langages-icons {
+      grid-area: icons;
+      align-self: flex-end;
+      @extend %dispFlexHor;
+      background: $color-4;
+      border-radius: 20px;
+      height: 65px;
 
-        img {
-          height: 40px;
-        }
+      img {
+        height: 40px;
       }
     }
   }
@@ -441,19 +453,21 @@ footer {
   padding: 10px 40px;
   position: relative;
 
-  @include hrGradient(70%, 1px);
+  #footer-nav {
+    #footer-top {
+      @extend %dispFlexHor;
+      padding: 20px 0;
 
-  #footer-top {
-    @extend %dispFlexHor;
-    padding: 20px 0;
+      img {
+        height: 80px;
+      }
 
-    img {
-      height: 80px;
+      .social-icons {
+        width: 10vw;
+      }
     }
 
-    .social-icons {
-      width: 10vw;
-    }
+    @include hrGradient(70%, 1px);
   }
 
   #author {
