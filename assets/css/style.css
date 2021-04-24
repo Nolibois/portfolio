@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Exo&display=swap");
-header nav ul, header nav #nav-container, #productions-container #cards, .social-icons, main #about-container .langages-icons, main #contact-container, footer #footer-nav #footer-top {
+header nav ul, header nav #nav-container, #productions-container #cards, .social-icons, main #about-container #tools .langages-icons, main #contact-container, footer #footer-nav #footer-top {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -12,7 +12,7 @@ body .h2, .social-icons div, .social-icons div a, main #about-container #picture
   align-items: center;
 }
 
-header nav, #productions-container, #productions-container #cards .description, #productions-container #cards #card-1, #productions-container #cards #card-2, #productions-container #cards #card-3, #productions-container #cards #card-4, main #about-container #about, main #about-container #about > div:nth-child(3), main #contact-container #contact {
+header nav, #productions-container, #productions-container #cards .description, #productions-container #cards #card-1, #productions-container #cards #card-2, #productions-container #cards #card-3, #productions-container #cards #card-4, main #about-container #about, main #about-container #about > div:nth-child(3), main #about-container #tools, main #contact-container #contact {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -41,6 +41,7 @@ header nav, #productions-container, #productions-container #cards .description, 
 
 body {
   font-family: "Exo", sans-serif;
+  min-height: 100vh;
 }
 
 body li {
@@ -146,11 +147,12 @@ header nav .social-icons {
   min-width: 110px;
 }
 
-header #cv {
+header .others_pages {
   background: #003366;
 }
 
-#pdf {
+#pdf,
+#hobbies {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -304,9 +306,9 @@ main #about-container {
   background: #7ab9f0;
   box-sizing: border-box;
   display: grid;
-  grid-template-columns: 40vw 45vw;
+  grid-template-columns: 40% 60%;
   grid-template-rows: 15% 27% 26% 17% 15%;
-  grid-template-areas: "pict ." "pict about" "pict about" "pict icons" "pict .";
+  grid-template-areas: "pict ." "pict about" "pict about" "pict tools" "pict .";
 }
 
 main #about-container #picture {
@@ -317,18 +319,19 @@ main #about-container #picture {
 main #about-container #picture img {
   height: 70%;
   background: #f8f8f1;
+  transform: translateX(-49px) rotate(-3deg);
 }
 
 main #about-container #about {
   grid-area: about;
   justify-content: space-between;
-  width: 68%;
+  height: 90%;
   position: relative;
 }
 
 main #about-container #about .h2 {
   margin: 0;
-  width: 51.6vw;
+  width: 113.5%;
   text-align: start;
   border-radius: 20px 0 0 20px;
   box-shadow: none;
@@ -340,24 +343,28 @@ main #about-container #about .h2 h2 {
 }
 
 main #about-container #about > div:nth-child(3) {
-  height: 80%;
-  justify-content: space-between;
+  height: 77%;
+  justify-content: space-evenly;
 }
 
-main #about-container #about .tools {
+main #about-container #tools {
+  grid-area: tools;
+  align-self: flex-end;
   font-size: 1rem;
   font-weight: bold;
 }
 
-main #about-container .langages-icons {
-  grid-area: icons;
-  align-self: flex-end;
+main #about-container #tools h4 {
+  margin-bottom: 10px;
+}
+
+main #about-container #tools .langages-icons {
   background: #c8e5f7;
   border-radius: 20px;
   height: 65px;
 }
 
-main #about-container .langages-icons img {
+main #about-container #tools .langages-icons img {
   height: 40px;
 }
 
@@ -504,11 +511,29 @@ footer #author a {
   color: #7ab9f0;
 }
 
+#pdf p {
+  padding: 20px 0;
+}
+
 /**************** @MEDIA *******************/
 @media screen and (max-width: 900px) {
   main #about-container {
-    padding: 0;
+    padding: 0 5%;
     height: 70vw;
+    grid-template-rows: 13% 28% 27% 19% 13%;
+    grid-template-areas: "pict ." "pict about" "pict about" "tools tools" ". .";
+  }
+  main #about-container {
+    height: 80vw;
+  }
+  main #about-container #picture {
+    justify-content: flex-start;
+  }
+  main #about-container #picture img {
+    transform: rotate(0);
+  }
+  main #about-container #about .h2 {
+    width: 109.2%;
   }
 }
 /*# sourceMappingURL=style.css.map */

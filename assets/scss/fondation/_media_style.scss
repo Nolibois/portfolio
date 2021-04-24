@@ -3,8 +3,34 @@
 @media screen and (max-width: 900px) {
   main {
     #about-container {
-      padding: 0;
+      padding: 0 5%;
       height: 70vw;
+
+      grid-template-rows: 13% 28% 27% 19% 13%;
+      grid-template-areas:
+        "pict ."
+        "pict about"
+        "pict about"
+        "tools tools"
+        ". .";
+    }
+
+    #about-container {
+      height: 80vw;
+
+      #picture {
+        justify-content: flex-start;
+
+        img {
+          transform: rotate(0);
+        }
+      }
+
+      #about {
+        .h2 {
+          width: 109.2%;
+        }
+      }
     }
   }
 }

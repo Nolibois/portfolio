@@ -10,6 +10,7 @@ $font-Exo: "Exo", sans-serif;
 
 body {
   font-family: $font-Exo;
+  min-height: 100vh;
 
   li {
     list-style-type: none;
@@ -118,12 +119,13 @@ header {
   }
 
   ///////////////// CV NAV //////////////////
-  #cv {
+  .others_pages {
     background: $color-1;
   }
 }
 
-#pdf {
+#pdf,
+#hobbies {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -263,13 +265,13 @@ main {
     background: $color-3;
     box-sizing: border-box;
     display: grid;
-    grid-template-columns: 40vw 45vw;
+    grid-template-columns: 40% 60%;
     grid-template-rows: 15% 27% 26% 17% 15%;
     grid-template-areas:
       "pict ."
       "pict about"
       "pict about"
-      "pict icons"
+      "pict tools"
       "pict .";
 
     #picture {
@@ -280,20 +282,20 @@ main {
       img {
         height: 70%;
         background: $color-5;
+        transform: translateX(-49px) rotate(-3deg);
       }
     }
 
     #about {
       grid-area: about;
-
       @extend %dispFlexVert;
       justify-content: space-between;
-      width: 68%;
+      height: 90%;
       position: relative;
 
       .h2 {
         margin: 0;
-        width: 51.6vw;
+        width: 113.5%;
         text-align: start;
         border-radius: 20px 0 0 20px;
         box-shadow: none;
@@ -305,27 +307,32 @@ main {
       }
 
       & > div:nth-child(3) {
-        height: 80%;
+        height: 77%;
         @extend %dispFlexVert;
-        justify-content: space-between;
-      }
-
-      .tools {
-        font-size: 1rem;
-        font-weight: bold;
+        justify-content: space-evenly;
       }
     }
 
-    .langages-icons {
-      grid-area: icons;
+    #tools {
+      grid-area: tools;
       align-self: flex-end;
-      @extend %dispFlexHor;
-      background: $color-4;
-      border-radius: 20px;
-      height: 65px;
+      font-size: 1rem;
+      font-weight: bold;
+      @extend %dispFlexVert;
 
-      img {
-        height: 40px;
+      h4 {
+        margin-bottom: 10px;
+      }
+
+      .langages-icons {
+        @extend %dispFlexHor;
+        background: $color-4;
+        border-radius: 20px;
+        height: 65px;
+
+        img {
+          height: 40px;
+        }
       }
     }
   }
@@ -488,4 +495,10 @@ footer {
       color: $color-3;
     }
   }
+}
+
+///////////////  PDF CV /////////////////
+
+#pdf p {
+  padding: 20px 0;
 }
