@@ -440,6 +440,7 @@ main {
         #message {
           grid-area: message;
           padding-top: 10px;
+          resize: none;
         }
 
         button {

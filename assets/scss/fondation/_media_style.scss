@@ -8,7 +8,7 @@
 
       grid-template-rows: 13% 28% 27% 19% 13%;
       grid-template-areas:
-        "pict ."
+        ". ."
         "pict about"
         "pict about"
         "tools tools"
@@ -23,6 +23,7 @@
 
         img {
           transform: rotate(0);
+          height: 100%;
         }
       }
 
@@ -30,6 +31,32 @@
         .h2 {
           width: 109.2%;
         }
+      }
+    }
+
+    #contact-container {
+      flex-direction: column;
+      justify-content: space-evenly;
+      height: 120vh;
+
+      #contact {
+        height: 60vw;
+        width: 70%;
+      }
+
+      #map {
+        width: 70%;
+        height: 20.83vw;
+      }
+    }
+  }
+
+  /////////////////////// FOOTER //////////////////////////
+
+  #footer-nav {
+    #footer-top {
+      .social-icons {
+        width: 20vw !important;
       }
     }
   }

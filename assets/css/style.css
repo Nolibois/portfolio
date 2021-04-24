@@ -466,6 +466,7 @@ main #contact-container #contact form #subject {
 main #contact-container #contact form #message {
   grid-area: message;
   padding-top: 10px;
+  resize: none;
 }
 
 main #contact-container #contact form button {
@@ -521,7 +522,7 @@ footer #author a {
     padding: 0 5%;
     height: 70vw;
     grid-template-rows: 13% 28% 27% 19% 13%;
-    grid-template-areas: "pict ." "pict about" "pict about" "tools tools" ". .";
+    grid-template-areas: ". ." "pict about" "pict about" "tools tools" ". .";
   }
   main #about-container {
     height: 80vw;
@@ -531,9 +532,26 @@ footer #author a {
   }
   main #about-container #picture img {
     transform: rotate(0);
+    height: 100%;
   }
   main #about-container #about .h2 {
     width: 109.2%;
+  }
+  main #contact-container {
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 120vh;
+  }
+  main #contact-container #contact {
+    height: 60vw;
+    width: 70%;
+  }
+  main #contact-container #map {
+    width: 70%;
+    height: 20.83vw;
+  }
+  #footer-nav #footer-top .social-icons {
+    width: 20vw !important;
   }
 }
 /*# sourceMappingURL=style.css.map */
