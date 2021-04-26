@@ -35,10 +35,10 @@ try {
   $mail->Port = "587";
 
   // Set gmail username
-  $mail->Username = "Olivier Nolibois";
+  $mail->Username = "";
 
   // Set gmail password
-  $mail->Password = "portfolioGmail2021";
+  $mail->Password = "";
 
   // Set email subject( $subject )
   $mail->Subject = "Le sujet du message";
