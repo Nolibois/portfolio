@@ -1,8 +1,3 @@
-<?php
-require './phpmailer/send_mail.php';
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -166,18 +161,18 @@ require './phpmailer/send_mail.php';
         </div>
         <div class="shadow"></div>
 
-        <form action="#" method="">
+        <form action="./phpmailer/send_mail.php" method="post">
           <!-- <label for="name-user">Nom</label> -->
-          <input type="text" name="" id="user-name" placeholder="Nom" />
+          <input type="text" name="name" id="user-name" placeholder="Nom" required />
           <!-- <label for="first-name">Prénom</label> -->
-          <input type="text" name="" id="first-name" placeholder="Prénom" />
+          <input type="text" name="firstName" id="first-name" placeholder="Prénom" required />
           <!-- <label for="email">Email</label> -->
-          <input type="text" name="" id="email" placeholder="email" />
+          <input type="text" name="email" id="email" placeholder="email" required />
           <!-- <label for="phone">Téléphone</label> -->
-          <input type="text" name="" id="phone" placeholder="Téléphone" />
+          <input type="text" name="phone" id="phone" placeholder="Téléphone" />
           <!-- <label for="subject">Objet du message</label> -->
-          <input type="text" name="" id="subject" placeholder="Ici, c'est le sujet de votre messasge" />
-          <textarea name="" id="message" cols="30" rows="10" placeholder="Laissez-moi vos impressions"></textarea>
+          <input type="text" name="subject" id="subject" placeholder="Ici, c'est le sujet de votre messasge" required />
+          <textarea name="message" id="message" cols="30" rows="10" placeholder="Laissez-moi vos impressions" required></textarea>
           <button type="submit">Envoyer</button>
         </form>
       </div>
