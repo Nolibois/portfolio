@@ -118,6 +118,20 @@
             </div>
           </a>
         </div>
+        <div id="card-5">
+          <div class="screen">
+            <div class="frame-out">
+              <div class="frame-in">
+                <img src="" alt="" />
+              </div>
+            </div>
+            <div class="border-bottom"></div>
+          </div>
+          <div class="foot-mac">
+            <div class="foot-up"></div>
+            <div class="foot-bottom"></div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -134,7 +148,7 @@
           <h3>Développeur Web Full-stack</h3>
           <p>« Autodidacte et passionné depuis toujours pour le design character, la 3D, l'animation avec un grand intérêt pour les nouvelles technologies, ce fut alors une révélation lorsque j'ai commencé à m'intéresser au monde du web.
           </p>
-          <p>Un "vrai" métier capable de rassembler tout ce qui me motive: Ecouter, partager, échanger avec des clients, une équipe. Pouvoir répondre à des demandes pesonnalisées. Des projets différents avec des besoins différents. Travailler ? Oui, mais avec le sourire. »
+          <p>Un métier capable de rassembler tout ce qui me motive: Ecouter, partager, échanger avec les clients, et l'équipe. Pouvoir répondre à des demandes pesonnalisées. Des projets différents avec des besoins différents. Travailler ? Qui parle de travailler quand on aime ce que l'on fait. »
           </p>
         </div>
       </div>

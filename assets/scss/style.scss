@@ -4,6 +4,13 @@ $color-3: #7ab9f0;
 $color-4: #c8e5f7;
 $color-5: #f8f8f1;
 
+:root {
+  --color1: #eef2f3; /* Screen */
+  --color2: #b0c6db; /* Alu paint*/
+  --color3: #a3b6bc; /* Border inside screen*/
+  --color4: #6b7d91; /* Shadow*/
+}
+
 @import "./extends";
 @import "./mixins";
 
