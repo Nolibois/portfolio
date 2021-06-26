@@ -47,7 +47,7 @@ if (isset($_POST) && !empty($_POST)) {
       //Check infos length without email
       if ($key !== "phone" && $key !== "email") {
         if (strlen($value) >= 3) {
-          $infosMsg[$key] = strip_tags($value);
+          $infosMsg[$key] = htmlspecialchars(strip_tags($value));
         } else {
           echo $msgError['lengthChar'];
         }
@@ -56,7 +56,7 @@ if (isset($_POST) && !empty($_POST)) {
       // Check email
       if ($key === "email") {
         if (filter_var($value, FILTER_VALIDATE_EMAIL)) {
-          $infosMsg[$key] = strip_tags($value);
+          $infosMsg[$key] = htmlspecialchars(strip_tags($value));
         } else {
           echo $msgError['filterEmail'];
         }
@@ -111,7 +111,7 @@ try {
   $mail->Username = "contact.portfolio.olivier@gmail.com";
 
   // Set gmail password
-  $mail->Password = "*********";
+  $mail->Password = "PortfolioGmail2021";
 
   // Set sender mail
   $mail->setFrom($infosMsg["email"], $infosMsg["name"] . " " . $infosMsg["firstName"]); //$infosMsg["email"], $infosMsg["name"] . " " . $infosMsg["firstName"]
