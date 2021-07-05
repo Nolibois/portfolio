@@ -78,10 +78,10 @@ if (isset($_POST) && !empty($_POST)) {
   echo $msgError['missField'];
 }
 
-var_dump($infosMsg);
+/* var_dump($infosMsg);
 echo count($_POST);
 
-// die;
+die; */
 
 
 // Create instance phpmailer
@@ -132,7 +132,7 @@ try {
   $mail->send();
   echo '<p>Votre mail a bien été envoyé!</p>';
 } catch (Exception $th) {
-  echo '<p>Un problème est survenu lors de l\'envoie du mail</p>';
+  echo '<p>Un problème est survenu lors de l\'envois du mail</p>';
   echo 'Error Phpmailer: ' . $mail->ErrorInfo;
 }
 

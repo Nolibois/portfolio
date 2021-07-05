@@ -161,7 +161,7 @@ header {
     align-items: start;
 
     & > * {
-      min-width: 300px;
+      min-width: min-content;
       width: 25%;
       padding: 20px;
     }
@@ -176,11 +176,12 @@ header {
       }
     }
 
-    #card-1 {
-      @extend %dispFlexVert;
-      @include displayCard("../img/pyrenees_small.png");
+    /* #card-1 {
+      // @extend %dispFlexVert;
+      @include displayCard();
     }
 
+    
     #card-2 {
       @extend %dispFlexVert;
       @include displayCard("../img/gaming_campus_small.png");
@@ -190,13 +191,23 @@ header {
       @extend %dispFlexVert;
       @include displayCard("../img/Print_3D.png");
     }
+      */
 
-    #card-4 {
+    #in-progress {
       @extend %dispFlexVert;
-      @include displayCard("../img/Vieux-Téléviseur.gif");
+      width: 34.2%;
+
+      .thumbnail {
+        width: 100%;
+        height: 200px;
+        border-radius: 20px;
+        background: url("../img/Vieux-Téléviseur.gif") center no-repeat;
+      }
     }
 
-    #card-5 {
+    .one-card {
+      @include displayCard();
+
       width: 350px;
       height: 300px;
       display: flex;
@@ -342,10 +353,18 @@ main {
       height: 100%;
       @extend %dispFlexCenter;
 
-      img {
+      .border-pict {
+        border: 3px solid $color-2;
         height: 70%;
-        background: $color-5;
-        transform: translateX(-49px) rotate(-3deg);
+        transform: translateX(-49px) rotate(3deg);
+        border-radius: 5px;
+
+        img {
+          @extend %dispFlexCenter;
+          height: 100%;
+          background: $color-5;
+          transform: rotate(354deg);
+        }
       }
     }
 
@@ -474,7 +493,7 @@ main {
         textarea:focus,
         button:focus {
           padding: 0 20px;
-          box-shadow: 0 0 8px 0 $color-2;
+          box-shadow: 0 3px 10px -2px $color-2;
           outline: none;
         }
 

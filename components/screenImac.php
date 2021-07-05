@@ -2,7 +2,7 @@
 function demoScreen(String $link, string $imgPath, string $imgAlt = "démo Portfolio")
 {
 ?>
-  <div id="card-5">
+  <div class="one-card">
     <div class="screen">
       <div class="frame-out">
         <div class="frame-in">
@@ -16,6 +16,7 @@ function demoScreen(String $link, string $imgPath, string $imgAlt = "démo Portf
       <div class="foot-bottom"></div>
     </div>
   </div>
+
 <?php
 }
 ?>

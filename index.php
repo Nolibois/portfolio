@@ -8,70 +8,76 @@
       <h2>Réalisations de sites web</h2>
     </div>
     <div id="cards">
-      <div id="card-1">
-        <a href="https://nolibois.github.io/Pyrenees/" target="_blank">
-          <div class="thumbnail"></div>
-          <div class="description">
-            <h3>"Les Pyrénées"</h3>
-            <p>Intégration Responsive</p>
-            <div>
-              <i class="fab fa-html5"></i>
-              <i class="fab fa-css3-alt"></i>
-            </div>
+
+      <div class="one-card-container">
+        <?php demoScreen(
+          "https://nolibois.github.io/Pyrenees/",
+          "assets\img\pyrenees_small.png",
+          "Lien vers Les Pyrénées - Réalisation - Intégration Web"
+        ); ?>
+        <div class="description">
+          <h3>"Les Pyrénées"</h3>
+          <p>Intégration</p>
+
+          <div>
+            <i class="far far-html5"></i>
+            <i class=""></i>
           </div>
-        </a>
-      </div>
-      <div id="card-2">
-        <a href="https://nolibois.github.io/Gaming_Campus/" target="_blank">
-          <div class="thumbnail"></div>
-          <div class="description">
-            <h3>"Gaming Campus"</h3>
-            <p>Intégration Responsive</p>
-            <div>
-              <i class="fab fa-html5"></i>
-              <i class="fab fa-css3-alt"></i>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div id="card-3">
-        <a href="https://nolibois.github.io/Print_3D_mobile_first/" target="_blank">
-          <div class="thumbnail"></div>
-          <div class="description">
-            <h3>"Print 3D"</h3>
-            <p>Mobile First</p>
-            <div>
-              <i class="fab fa-html5"></i>
-              <i class="fab fa-sass"></i>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div id="card-4">
-        <a href="#" target="_blank">
-          <div class="thumbnail"></div>
-          <div class="description">
-            <h3>Prochain projet</h3>
-            <p>Bientôt en ligne</p>
-            <div>
-              <i class=""></i>
-              <i class=""></i>
-            </div>
-          </div>
-        </a>
+        </div>
       </div>
 
-      <?php demoScreen(
-        "https://nolibois.github.io/Pyrenees/",
-        "assets\img\pyrenees_small.png",
-        "Lien vers Les Pyrénées - Réalisation - Intégration Web"
-      ); ?>
+      <div class="one-card-container">
+        <?php demoScreen(
+          "https://nolibois.github.io/Gaming_Campus/",
+          "assets\img\gaming_campus_small.png",
+          "Lien vers Gaming Campus - Réalisation - Intégration Web"
+        ); ?>
+        <div class="description">
+          <h3>"Gaming Campus"</h3>
+          <p>Intégration</p>
+          <div>
+            <i class="far far-html5"></i>
+            <i class=""></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="one-card-container">
+        <?php demoScreen(
+          "https://nolibois.github.io/Print_3D_mobile_first/",
+          "assets\img\Print_3D.png",
+          "Lien vers Gaming Campus - Réalisation - Intégration Web"
+        ); ?>
+        <div class="description">
+          <h3>"Print-3D"</h3>
+          <p>Contenu First method</p>
+          <div>
+            <i class="far far-html5"></i>
+            <i class=""></i>
+          </div>
+        </div>
+      </div>
+
+
+      <div id="in-progress">
+
+        <div class="thumbnail"></div>
+        <div class="description">
+          <h3>Prochain projet</h3>
+          <p>Bientôt en ligne</p>
+        </div>
+
+      </div>
+
+
     </div>
   </section>
 
   <section id="about-container">
     <div id="picture">
-      <img src="./assets/img/BEA0799_medium.png" alt="Photo Olivier Nolibois">
+      <div class="border-pict">
+        <img src="./assets/img/BEA0799_medium.png" alt="Photo Olivier Nolibois">
+      </div>
     </div>
     <div id="about">
       <div class="h2">

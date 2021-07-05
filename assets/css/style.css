@@ -17,13 +17,13 @@ footer #footer-nav #footer-top, main #contact-container, main #about-container #
   align-items: center;
 }
 
-main #about-container #picture, .social-icons div a, .social-icons div, body .h2 {
+main #about-container #picture .border-pict img, main #about-container #picture, .social-icons div a, .social-icons div, body .h2 {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-main #contact-container #contact, main #about-container #tools, main #about-container #about > div:nth-child(3), main #about-container #about, #productions-container #cards #card-4, #productions-container #cards #card-3, #productions-container #cards #card-2, #productions-container #cards #card-1, #productions-container #cards .description, #productions-container, header nav {
+main #contact-container #contact, main #about-container #tools, main #about-container #about > div:nth-child(3), main #about-container #about, #productions-container #cards #in-progress, #productions-container #cards .description, #productions-container, header nav {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -176,9 +176,25 @@ header .others_pages {
   justify-content: space-evenly;
   flex-wrap: wrap;
   align-items: start;
+  /* #card-1 {
+    // @extend %dispFlexVert;
+    @include displayCard();
+  }
+
+
+  #card-2 {
+    @extend %dispFlexVert;
+    @include displayCard("../img/gaming_campus_small.png");
+  }
+
+  #card-3 {
+    @extend %dispFlexVert;
+    @include displayCard("../img/Print_3D.png");
+  }
+    */
 }
 #productions-container #cards > * {
-  min-width: 300px;
+  min-width: min-content;
   width: 25%;
   padding: 20px;
 }
@@ -189,59 +205,32 @@ header .others_pages {
 #productions-container #cards .description p {
   padding: 20px 0;
 }
-#productions-container #cards #card-1 .thumbnail {
+#productions-container #cards #in-progress {
+  width: 34.2%;
+}
+#productions-container #cards #in-progress .thumbnail {
   width: 100%;
   height: 200px;
   border-radius: 20px;
-  background: url("../img/pyrenees_small.png") center/cover;
+  background: url("../img/Vieux-Téléviseur.gif") center no-repeat;
 }
-#productions-container #cards #card-1 i {
-  font-size: 3rem;
-  color: #4781bf;
-}
-#productions-container #cards #card-2 .thumbnail {
-  width: 100%;
-  height: 200px;
-  border-radius: 20px;
-  background: url("../img/gaming_campus_small.png") center/cover;
-}
-#productions-container #cards #card-2 i {
-  font-size: 3rem;
-  color: #4781bf;
-}
-#productions-container #cards #card-3 .thumbnail {
-  width: 100%;
-  height: 200px;
-  border-radius: 20px;
-  background: url("../img/Print_3D.png") center/cover;
-}
-#productions-container #cards #card-3 i {
-  font-size: 3rem;
-  color: #4781bf;
-}
-#productions-container #cards #card-4 .thumbnail {
-  width: 100%;
-  height: 200px;
-  border-radius: 20px;
-  background: url("../img/Vieux-Téléviseur.gif") center/cover;
-}
-#productions-container #cards #card-4 i {
-  font-size: 3rem;
-  color: #4781bf;
-}
-#productions-container #cards #card-5 {
+#productions-container #cards .one-card {
   width: 350px;
   height: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-#productions-container #cards #card-5 .screen {
+#productions-container #cards .one-card i {
+  font-size: 3rem;
+  color: #4781bf;
+}
+#productions-container #cards .one-card .screen {
   width: 100%;
   height: 80%;
   /* or 240px */
 }
-#productions-container #cards #card-5 .screen .frame-out {
+#productions-container #cards .one-card .screen .frame-out {
   width: 100%;
   height: 83.34%;
   /* or 200px*/
@@ -251,34 +240,34 @@ header .others_pages {
   align-items: center;
   border-radius: 3px 3px 0 0;
 }
-#productions-container #cards #card-5 .screen .frame-out .frame-in {
+#productions-container #cards .one-card .screen .frame-out .frame-in {
   width: 95.7%;
   height: 91%;
   background: #39ca39;
 }
-#productions-container #cards #card-5 .screen .frame-out .frame-in img {
+#productions-container #cards .one-card .screen .frame-out .frame-in img {
   width: 100%;
 }
-#productions-container #cards #card-5 .screen .border-bottom {
+#productions-container #cards .one-card .screen .border-bottom {
   width: 100%;
   height: 16.67%;
   background: var(--color2);
   border-radius: 0 0 3px 3px;
 }
-#productions-container #cards #card-5 .foot-mac {
+#productions-container #cards .one-card .foot-mac {
   width: 22.86%;
   height: 20%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-#productions-container #cards #card-5 .foot-mac .foot-up {
+#productions-container #cards .one-card .foot-mac .foot-up {
   width: 100%;
   height: 87%;
   background: var(--color2);
   box-shadow: inset 0 13px 19px var(--color4);
 }
-#productions-container #cards #card-5 .foot-mac .foot-bottom {
+#productions-container #cards .one-card .foot-mac .foot-bottom {
   width: 105%;
   height: 13%;
   background: var(--color2);
@@ -344,10 +333,16 @@ main #about-container #picture {
   grid-area: pict;
   height: 100%;
 }
-main #about-container #picture img {
+main #about-container #picture .border-pict {
+  border: 3px solid #4781bf;
   height: 70%;
+  transform: translateX(-49px) rotate(3deg);
+  border-radius: 5px;
+}
+main #about-container #picture .border-pict img {
+  height: 100%;
   background: #f8f8f1;
-  transform: translateX(-49px) rotate(-3deg);
+  transform: rotate(354deg);
 }
 main #about-container #about {
   grid-area: about;
@@ -448,7 +443,7 @@ main #contact-container #contact form input:focus,
 main #contact-container #contact form textarea:focus,
 main #contact-container #contact form button:focus {
   padding: 0 20px;
-  box-shadow: 0 0 8px 0 #4781bf;
+  box-shadow: 0 3px 10px -2px #4781bf;
   outline: none;
 }
 main #contact-container #contact form #user-name {
