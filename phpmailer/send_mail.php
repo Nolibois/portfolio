@@ -108,7 +108,7 @@ try {
   $mail->Port = "587";
 
   // Set gmail username
-  $mail->Username = "contact.portfolio.olivier@gmail.com";
+  $mail->Username = "";
 
   // Set gmail password
   $mail->Password = "";
