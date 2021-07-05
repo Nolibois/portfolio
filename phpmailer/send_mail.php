@@ -111,7 +111,7 @@ try {
   $mail->Username = "contact.portfolio.olivier@gmail.com";
 
   // Set gmail password
-  $mail->Password = "PortfolioGmail2021";
+  $mail->Password = "";
 
   // Set sender mail
   $mail->setFrom($infosMsg["email"], $infosMsg["name"] . " " . $infosMsg["firstName"]); //$infosMsg["email"], $infosMsg["name"] . " " . $infosMsg["firstName"]
