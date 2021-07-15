@@ -1,0 +1,599 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo&display=swap");
+
+$font-Exo: "Exo", sans-serif;
+
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-Exo;
+  min-height: 100vh;
+
+  li {
+    list-style-type: none;
+  }
+
+  a {
+    text-decoration: none;
+    color: $color-5;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .h2 {
+    margin: 0 auto 5vh;
+    @extend %dispFlexCenter;
+    justify-content: start;
+    background: $color-5;
+    border-radius: 20px;
+    height: 35px;
+    width: 300px;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  hr {
+    width: 100%;
+    height: 1px;
+  }
+}
+
+/*///////////////// HEADER /////////////////*/
+header {
+  nav {
+    position: relative;
+    z-index: 1;
+    padding: 20px 0;
+    width: 100%;
+    background: $color-1;
+    color: $color-5;
+    text-align: center;
+    @extend %dispFlexVert;
+    align-items: center;
+    box-shadow: 0 8px 23px 13px rgba(0, 51, 102, 0.49);
+
+    h1 {
+      font-size: 1.4rem;
+      width: 100%;
+      text-align: start;
+      padding-left: 5vw;
+      box-sizing: border-box;
+    }
+
+    img {
+      height: 50px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hr-container {
+      position: relative;
+      width: 100%;
+    }
+
+    @include hrGradient(42%, 3px);
+
+    ul {
+      @extend %dispFlexHor;
+      width: 65%;
+      min-width: 400px;
+    }
+
+    #nav-container {
+      @extend %dispFlexHor;
+      padding: 0 15%;
+      width: 100%;
+      box-sizing: border-box;
+
+      li {
+        position: relative;
+      }
+
+      li::after {
+        position: absolute;
+        content: "";
+        height: 3px;
+        width: 0;
+        text-align: center;
+        border: none;
+        background: linear-gradient(
+          90deg,
+          rgba(0, 51, 102, 1) 0%,
+          rgba(71, 129, 191, 1) 50%,
+          rgba(0, 51, 102, 1) 100%
+        );
+        top: 28px;
+        left: 0;
+        transition: 0.5s ease;
+      }
+
+      li:hover::after {
+        width: 100%;
+      }
+    }
+
+    .social-icons {
+      width: 30%;
+      min-width: 110px;
+    }
+  }
+
+  ///////////////// CV NAV //////////////////
+  .others_pages {
+    background: $color-1;
+  }
+}
+
+#pdf,
+#hobbies {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px 0;
+}
+
+#productions-container {
+  position: relative;
+  z-index: 0;
+  min-height: 560px;
+  background: $color-4;
+  @extend %dispFlexVert;
+  align-items: start;
+  padding: 7vh 7%;
+
+  * {
+    color: black;
+  }
+
+  .h2 {
+    box-shadow: 0 14px 9px -7px rgba(0, 51, 102, 0.49);
+  }
+
+  h2 {
+    margin: 0 auto;
+  }
+
+  #cards {
+    width: 100%;
+    @extend %dispFlexHor;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: start;
+
+    & > * {
+      min-width: min-content;
+      width: 25%;
+      padding: 20px;
+    }
+
+    .description {
+      padding-top: 20px;
+      @extend %dispFlexVert;
+      align-items: center;
+
+      p {
+        padding: 8px 0;
+      }
+
+      i {
+        font-size: 3rem;
+        color: $color-2;
+      }
+    }
+
+    /* #card-1 {
+      // @extend %dispFlexVert;
+      @include displayCard();
+    }
+
+    
+    #card-2 {
+      @extend %dispFlexVert;
+      @include displayCard("../img/gaming_campus_small.png");
+    }
+
+    #card-3 {
+      @extend %dispFlexVert;
+      @include displayCard("../img/Print_3D.png");
+    }
+      */
+
+    #in-progress {
+      @extend %dispFlexVert;
+      width: 34.2%;
+
+      .thumbnail {
+        width: 100%;
+        height: 200px;
+        border-radius: 20px;
+        background: url("../img/Vieux-Téléviseur.gif") center no-repeat;
+      }
+    }
+
+    .one-card {
+      @include displayCard();
+
+      width: 350px;
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .screen {
+        width: 100%;
+        height: 80%; /* or 240px */
+
+        .frame-out {
+          width: 100%;
+          height: 83.34%; /* or 200px*/
+          background: var(--color1);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 3px 3px 0 0;
+
+          .frame-in {
+            width: 95.7%;
+            height: 91%;
+            background: rgb(57, 202, 57);
+
+            img {
+              width: 100%;
+            }
+          }
+        }
+
+        .border-bottom {
+          width: 100%;
+          height: 16.67%;
+          background: var(--color2);
+          border-radius: 0 0 3px 3px;
+        }
+      }
+
+      .foot-mac {
+        width: 22.86%;
+        height: 20%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .foot-up {
+          width: 100%;
+          height: 87%;
+          background: var(--color2);
+          box-shadow: inset 0 13px 19px var(--color4);
+        }
+
+        .foot-bottom {
+          width: 105%;
+          height: 13%;
+          background: var(--color2);
+          border-radius: 2px;
+          box-shadow: inset 0 5px 3px var(--color4);
+        }
+      }
+    }
+
+    a {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+
+.social-icons {
+  @extend %dispFlexHor;
+
+  .linkedin-icon:hover,
+  .tumblr-icon:hover {
+    box-shadow: 0 0 3px 4px rgba(248, 248, 248, 0.37);
+  }
+
+  div {
+    width: 30px;
+    height: 30px;
+    color: $color-1;
+    background: $color-5;
+    border-radius: 50%;
+    @extend %dispFlexCenter;
+    position: relative;
+    transition: 0.4s ease;
+
+    a {
+      width: 100%;
+      height: 100%;
+      @extend %dispFlexCenter;
+    }
+
+    &:nth-child(1):hover > a svg {
+      position: absolute;
+      transform: translate(20%, -20%);
+      height: 21px;
+    }
+
+    svg {
+      height: 17px;
+      color: $color-1;
+      transition: all 0.4s ease;
+    }
+  }
+}
+
+//////////////////// MAIN //////////////////////
+
+main {
+  .shadow {
+    position: absolute;
+    content: "";
+    z-index: 0;
+    height: 15px;
+    width: 300px;
+    border-radius: 0 0 0 20px;
+    box-shadow: 9px 17px 9px 0px rgba(0, 51, 102, 0.11),
+      32px 8px 13px 4px rgba(0, 51, 102, 0.21);
+    top: 12px;
+    transform: rotate(-4deg);
+  }
+
+  //////////////////// ABOUT //////////////////
+  #about-container {
+    padding: 0 7%;
+    height: 58.75vw;
+    width: 100%;
+    background: $color-3;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 15% 27% 26% 17% 15%;
+    grid-template-areas:
+      "pict ."
+      "pict about"
+      "pict about"
+      "pict tools"
+      "pict .";
+
+    #picture {
+      grid-area: pict;
+      height: 100%;
+      @extend %dispFlexCenter;
+
+      .border-pict {
+        border: 3px solid $color-2;
+        height: 70%;
+        transform: translateX(-49px) rotate(2deg);
+        border-radius: 5px;
+
+        img {
+          @extend %dispFlexCenter;
+          height: 100%;
+          background: $color-5;
+          transform: rotate(-4deg);
+        }
+      }
+    }
+
+    #about {
+      grid-area: about;
+      @extend %dispFlexVert;
+      justify-content: space-between;
+      height: 90%;
+      position: relative;
+
+      .h2 {
+        margin: 0;
+        width: 113.5%;
+        text-align: start;
+        border-radius: 20px 0 0 20px;
+        box-shadow: none;
+        z-index: 1;
+
+        h2 {
+          margin: 0 30px;
+        }
+      }
+
+      & > div:nth-child(3) {
+        height: 77%;
+        @extend %dispFlexVert;
+        justify-content: space-evenly;
+      }
+    }
+
+    #tools {
+      grid-area: tools;
+      align-self: flex-end;
+      font-size: 1rem;
+      font-weight: bold;
+      @extend %dispFlexVert;
+
+      h4 {
+        margin-bottom: 10px;
+      }
+
+      .langages-icons {
+        @extend %dispFlexHor;
+        background: $color-4;
+        border-radius: 20px;
+        height: 65px;
+
+        img {
+          height: 40px;
+        }
+      }
+    }
+  }
+
+  ///////////////// CONTACT /////////////////
+  #contact-container {
+    padding: 0 7%;
+    height: 58.75vw;
+    width: 100%;
+    background: $color-4;
+    @extend %dispFlexHor;
+    box-sizing: border-box;
+
+    #map {
+      width: 20.83vw;
+      height: 70%;
+      background: url(../img/map_BX.png) center/cover;
+    }
+
+    #contact {
+      @extend %dispFlexVert;
+      justify-content: space-between;
+      height: 70%;
+      width: 50%;
+      box-sizing: border-box;
+      position: relative;
+
+      .h2 {
+        margin: 0;
+        width: 143%;
+        position: relative;
+        z-index: 1;
+        border-radius: 0 20px 20px 0;
+        justify-content: flex-end;
+        transform: translateX(-30%);
+
+        h2 {
+          margin: 0 30px;
+          width: unset;
+        }
+      }
+
+      .shadow {
+        transform: rotateY(180deg) rotate(-4deg);
+        right: 0;
+        height: 12px;
+        width: 200px;
+        top: 13px;
+      }
+
+      form {
+        padding-top: 10%;
+        height: 82%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 10% 10% 15% 38% 13%;
+        grid-gap: 3%;
+        grid-template-areas:
+          "u-n f-n"
+          "email phone"
+          "subject subject"
+          "message message"
+          "btn btn";
+
+        label,
+        input,
+        textarea,
+        button {
+          padding: 0 20px;
+          border: none;
+          transition: 0.7s;
+        }
+
+        label:focus,
+        input:focus,
+        textarea:focus,
+        button:focus {
+          padding: 0 20px;
+          box-shadow: 0 3px 10px -2px $color-2;
+          outline: none;
+        }
+
+        #user-name {
+          grid-area: u-n;
+          border-top-left-radius: 20px;
+        }
+
+        #first-name {
+          grid-area: f-n;
+          border-top-right-radius: 20px;
+        }
+
+        #email {
+          grid-area: email;
+        }
+
+        #phone {
+          grid-area: phone;
+        }
+
+        #subject {
+          grid-area: subject;
+        }
+
+        #message {
+          grid-area: message;
+          padding-top: 10px;
+          resize: none;
+        }
+
+        button {
+          grid-area: btn;
+          border-radius: 0 0 20px 20px;
+          background: $color-2;
+          color: $color-5;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+/*!////////////////// FOOTER  //////////////////*/
+footer {
+  background: $color-1;
+  padding: 10px 40px;
+  position: relative;
+
+  #footer-nav {
+    #footer-top {
+      @extend %dispFlexHor;
+      padding: 20px 0;
+
+      img {
+        height: 60px;
+      }
+
+      .social-icons {
+        width: 10vw;
+      }
+    }
+
+    hr {
+      height: 2px;
+      border: none;
+      background: linear-gradient(
+        90deg,
+        rgba(0, 51, 102, 1) 0%,
+        rgba(71, 129, 191, 1) 50%,
+        rgba(0, 51, 102, 1) 100%
+      );
+    }
+  }
+
+  #author {
+    text-align: right;
+    color: $color-5;
+    padding: 20px 0;
+
+    a {
+      color: $color-3;
+    }
+  }
+}
+
+///////////////  PDF CV /////////////////
+
+#pdf p {
+  padding: 20px 0;
+}

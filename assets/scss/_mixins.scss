@@ -1,5 +1,4 @@
-@mixin displayCard($url) {
-  /* HTML's architecture to respect: 
+/* HTML's architecture to respect: 
   <div id="card-1">
     <a href="https://exemple.com/" target="_blank">
       <div class="thumbnail"></div>
@@ -15,13 +14,7 @@
   </div>
   */
 
-  .thumbnail {
-    width: 100%;
-    height: 200px;
-    border-radius: 20px;
-    background: url($url) center/cover;
-  }
-
+@mixin displayCard() {
   i {
     font-size: 3rem;
     color: $color-2;

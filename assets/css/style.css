@@ -1,44 +1,86 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Exo&display=swap");
-header nav ul, header nav #nav-container, header #productions-container #cards, .social-icons, main #about-container, main #about-container #about .langages-icons, main #contact-container, footer #footer-top {
+:root {
+  --color1: #eef2f3;
+  /* Screen */
+  --color2: #b0c6db;
+  /* Alu paint*/
+  --color3: #a3b6bc;
+  /* Border inside screen*/
+  --color4: #6b7d91;
+  /* Shadow*/
+}
+
+footer #footer-nav #footer-top,
+main #contact-container,
+main #about-container #tools .langages-icons,
+.social-icons,
+#productions-container #cards,
+header nav #nav-container,
+header nav ul {
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
-body .h2, .social-icons div, .social-icons div a, main #about-container #picture {
+main #about-container #picture .border-pict img,
+main #about-container #picture,
+.social-icons div a,
+.social-icons div,
+body .h2 {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-header nav, header #productions-container, header #productions-container #cards .description, header #productions-container #cards #card-1, header #productions-container #cards #card-2, header #productions-container #cards #card-3, main #about-container #about, main #about-container #about > div:nth-child(3), main #contact-container #contact {
+main #contact-container #contact,
+main #about-container #tools,
+main #about-container #about > div:nth-child(3),
+main #about-container #about,
+#productions-container #cards #in-progress,
+#productions-container #cards .description,
+#productions-container,
+header nav {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
 }
 
+/* HTML's architecture to respect: 
+  <div id="card-1">
+    <a href="https://exemple.com/" target="_blank">
+      <div class="thumbnail"></div>
+      <div class="description">
+        <h3>"Title"</h3>
+        <p>...write a description...</p>
+        <div>
+          <i class="fab fa-..."></i>
+          <i class="fab fa-...-alt"></i>
+        </div>
+      </div>
+    </a>
+  </div>
+  */
 * {
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: "Exo", sans-serif;
+  min-height: 100vh;
 }
-
 body li {
   list-style-type: none;
 }
-
 body a {
   text-decoration: none;
   color: #f8f8f1;
 }
-
 body h1 {
   font-size: 1.8rem;
 }
-
 body .h2 {
   margin: 0 auto 5vh;
   justify-content: start;
@@ -47,25 +89,15 @@ body .h2 {
   height: 35px;
   width: 300px;
 }
-
 body h2 {
   font-size: 1.2rem;
 }
-
 body hr {
   width: 100%;
   height: 1px;
 }
 
-* {
-  scroll-behavior: smooth;
-}
-
 /*///////////////// HEADER /////////////////*/
-header {
-  min-height: 100vh;
-}
-
 header nav {
   position: relative;
   z-index: 1;
@@ -76,53 +108,44 @@ header nav {
   text-align: center;
   align-items: center;
   box-shadow: 0 8px 23px 13px rgba(0, 51, 102, 0.49);
-  /* hr {
-      position: absolute;
-      content: "";
-      width: 100%;
-      top: 46%;
-      height: 3px;
-      box-shadow: 0 20px 10px -7px $color-3;
-    } */
 }
-
+header nav h1 {
+  font-size: 1.4rem;
+  width: 100%;
+  text-align: start;
+  padding-left: 5vw;
+  box-sizing: border-box;
+}
 header nav img {
   height: 50px;
-  padding: 20px 0;
   position: relative;
   z-index: 1;
 }
-
 header nav .hr-container {
   position: relative;
   width: 100%;
 }
-
 header nav hr {
   position: absolute;
   content: "";
   width: 100%;
-  top: 46%;
+  top: 42%;
   height: 3px;
   border: none;
   background: linear-gradient(90deg, #003366 0%, #4781bf 50%, #003366 100%);
 }
-
 header nav ul {
   width: 65%;
   min-width: 400px;
 }
-
 header nav #nav-container {
   padding: 0 15%;
   width: 100%;
   box-sizing: border-box;
 }
-
 header nav #nav-container li {
   position: relative;
 }
-
 header nav #nav-container li::after {
   position: absolute;
   content: "";
@@ -135,17 +158,26 @@ header nav #nav-container li::after {
   left: 0;
   transition: 0.5s ease;
 }
-
 header nav #nav-container li:hover::after {
   width: 100%;
 }
-
 header nav .social-icons {
   width: 30%;
   min-width: 110px;
 }
+header .others_pages {
+  background: #003366;
+}
 
-header #productions-container {
+#pdf,
+#hobbies {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px 0;
+}
+
+#productions-container {
   position: relative;
   z-index: 0;
   min-height: 560px;
@@ -153,132 +185,123 @@ header #productions-container {
   align-items: start;
   padding: 7vh 7%;
 }
-
-header #productions-container * {
+#productions-container * {
   color: black;
 }
-
-header #productions-container .h2 {
+#productions-container .h2 {
   box-shadow: 0 14px 9px -7px rgba(0, 51, 102, 0.49);
 }
-
-header #productions-container h2 {
+#productions-container h2 {
   margin: 0 auto;
 }
-
-header #productions-container #cards {
+#productions-container #cards {
   width: 100%;
   justify-content: space-evenly;
   flex-wrap: wrap;
   align-items: start;
-}
+  /* #card-1 {
+    // @extend %dispFlexVert;
+    @include displayCard();
+  }
 
-header #productions-container #cards > * {
-  min-width: 300px;
+
+  #card-2 {
+    @extend %dispFlexVert;
+    @include displayCard("../img/gaming_campus_small.png");
+  }
+
+  #card-3 {
+    @extend %dispFlexVert;
+    @include displayCard("../img/Print_3D.png");
+  }
+    */
+}
+#productions-container #cards > * {
+  min-width: min-content;
   width: 25%;
   padding: 20px;
 }
-
-header #productions-container #cards .description {
+#productions-container #cards .description {
   padding-top: 20px;
   align-items: center;
 }
-
-header #productions-container #cards .description p {
-  padding: 20px 0;
+#productions-container #cards .description p {
+  padding: 8px 0;
 }
-
-header #productions-container #cards #card-1 {
-  /* HTML's architecture to respect: 
-  <div id="card-1">
-    <a href="https://exemple.com/" target="_blank">
-      <div class="thumbnail"></div>
-      <div class="description">
-        <h3>"Title"</h3>
-        <p>...write a description...</p>
-        <div>
-          <i class="fab fa-..."></i>
-          <i class="fab fa-...-alt"></i>
-        </div>
-      </div>
-    </a>
-  </div>
-  */
-}
-
-header #productions-container #cards #card-1 .thumbnail {
-  width: 100%;
-  height: 200px;
-  border-radius: 20px;
-  background: url("../img/pyrenees_small.png") center/cover;
-}
-
-header #productions-container #cards #card-1 i {
+#productions-container #cards .description i {
   font-size: 3rem;
   color: #4781bf;
 }
-
-header #productions-container #cards #card-2 {
-  /* HTML's architecture to respect: 
-  <div id="card-1">
-    <a href="https://exemple.com/" target="_blank">
-      <div class="thumbnail"></div>
-      <div class="description">
-        <h3>"Title"</h3>
-        <p>...write a description...</p>
-        <div>
-          <i class="fab fa-..."></i>
-          <i class="fab fa-...-alt"></i>
-        </div>
-      </div>
-    </a>
-  </div>
-  */
+#productions-container #cards #in-progress {
+  width: 34.2%;
 }
-
-header #productions-container #cards #card-2 .thumbnail {
+#productions-container #cards #in-progress .thumbnail {
   width: 100%;
   height: 200px;
   border-radius: 20px;
-  background: url("../img/gaming_campus_small.png") center/cover;
+  background: url("../img/Vieux-Téléviseur.gif") center no-repeat;
 }
-
-header #productions-container #cards #card-2 i {
+#productions-container #cards .one-card {
+  width: 350px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#productions-container #cards .one-card i {
   font-size: 3rem;
   color: #4781bf;
 }
-
-header #productions-container #cards #card-3 {
-  /* HTML's architecture to respect: 
-  <div id="card-1">
-    <a href="https://exemple.com/" target="_blank">
-      <div class="thumbnail"></div>
-      <div class="description">
-        <h3>"Title"</h3>
-        <p>...write a description...</p>
-        <div>
-          <i class="fab fa-..."></i>
-          <i class="fab fa-...-alt"></i>
-        </div>
-      </div>
-    </a>
-  </div>
-  */
-}
-
-header #productions-container #cards #card-3 .thumbnail {
+#productions-container #cards .one-card .screen {
   width: 100%;
-  height: 200px;
-  border-radius: 20px;
-  background: url("#") center/cover;
+  height: 80%;
+  /* or 240px */
 }
-
-header #productions-container #cards #card-3 i {
-  font-size: 3rem;
-  color: #4781bf;
+#productions-container #cards .one-card .screen .frame-out {
+  width: 100%;
+  height: 83.34%;
+  /* or 200px*/
+  background: var(--color1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px 3px 0 0;
 }
-
-header #productions-container #cards a {
+#productions-container #cards .one-card .screen .frame-out .frame-in {
+  width: 95.7%;
+  height: 91%;
+  background: #39ca39;
+}
+#productions-container #cards .one-card .screen .frame-out .frame-in img {
+  width: 100%;
+}
+#productions-container #cards .one-card .screen .border-bottom {
+  width: 100%;
+  height: 16.67%;
+  background: var(--color2);
+  border-radius: 0 0 3px 3px;
+}
+#productions-container #cards .one-card .foot-mac {
+  width: 22.86%;
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#productions-container #cards .one-card .foot-mac .foot-up {
+  width: 100%;
+  height: 87%;
+  background: var(--color2);
+  box-shadow: inset 0 13px 19px var(--color4);
+}
+#productions-container #cards .one-card .foot-mac .foot-bottom {
+  width: 105%;
+  height: 13%;
+  background: var(--color2);
+  border-radius: 2px;
+  box-shadow: inset 0 5px 3px var(--color4);
+}
+#productions-container #cards a {
   height: 100%;
   width: 100%;
 }
@@ -287,7 +310,6 @@ header #productions-container #cards a {
 .social-icons .tumblr-icon:hover {
   box-shadow: 0 0 3px 4px rgba(248, 248, 248, 0.37);
 }
-
 .social-icons div {
   width: 30px;
   height: 30px;
@@ -297,28 +319,19 @@ header #productions-container #cards a {
   position: relative;
   transition: 0.4s ease;
 }
-
 .social-icons div a {
   width: 100%;
   height: 100%;
 }
-
 .social-icons div:nth-child(1):hover > a svg {
   position: absolute;
   transform: translate(20%, -20%);
   height: 21px;
 }
-
 .social-icons div svg {
   height: 17px;
   color: #003366;
   transition: all 0.4s ease;
-}
-
-/*/////////////////// MAIN /////////////////////*/
-main {
-  /****************** ABOUT **************/
-  /****************** CONTACT **************/
 }
 
 main .shadow {
@@ -328,68 +341,75 @@ main .shadow {
   height: 15px;
   width: 300px;
   border-radius: 0 0 0 20px;
-  box-shadow: 9px 17px 9px 0px rgba(0, 51, 102, 0.11), 32px 8px 13px 4px rgba(0, 51, 102, 0.21);
+  box-shadow: 9px 17px 9px 0px rgba(0, 51, 102, 0.11),
+    32px 8px 13px 4px rgba(0, 51, 102, 0.21);
   top: 12px;
   transform: rotate(-4deg);
 }
-
 main #about-container {
   padding: 0 7%;
   height: 58.75vw;
   width: 100%;
   background: #7ab9f0;
   box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  grid-template-rows: 15% 27% 26% 17% 15%;
+  grid-template-areas: "pict ." "pict about" "pict about" "pict tools" "pict .";
 }
-
 main #about-container #picture {
+  grid-area: pict;
   height: 100%;
 }
-
-main #about-container #picture img {
+main #about-container #picture .border-pict {
+  border: 3px solid #4781bf;
   height: 70%;
-  background: #f8f8f1;
+  transform: translateX(-49px) rotate(2deg);
+  border-radius: 5px;
 }
-
+main #about-container #picture .border-pict img {
+  height: 100%;
+  background: #f8f8f1;
+  transform: rotate(-4deg);
+}
 main #about-container #about {
+  grid-area: about;
   justify-content: space-between;
-  height: 70%;
-  width: 50%;
+  height: 90%;
   position: relative;
 }
-
 main #about-container #about .h2 {
   margin: 0;
-  width: 126%;
+  width: 113.5%;
   text-align: start;
   border-radius: 20px 0 0 20px;
   box-shadow: none;
   z-index: 1;
 }
-
 main #about-container #about .h2 h2 {
   margin: 0 30px;
 }
-
 main #about-container #about > div:nth-child(3) {
-  height: 80%;
-  justify-content: space-between;
+  height: 77%;
+  justify-content: space-evenly;
 }
-
-main #about-container #about .tools {
+main #about-container #tools {
+  grid-area: tools;
+  align-self: flex-end;
   font-size: 1rem;
   font-weight: bold;
 }
-
-main #about-container #about .langages-icons {
+main #about-container #tools h4 {
+  margin-bottom: 10px;
+}
+main #about-container #tools .langages-icons {
   background: #c8e5f7;
   border-radius: 20px;
   height: 65px;
 }
-
-main #about-container #about .langages-icons img {
+main #about-container #tools .langages-icons img {
   height: 40px;
 }
-
 main #contact-container {
   padding: 0 7%;
   height: 58.75vw;
@@ -397,13 +417,11 @@ main #contact-container {
   background: #c8e5f7;
   box-sizing: border-box;
 }
-
 main #contact-container #map {
   width: 20.83vw;
   height: 70%;
   background: url(../img/map_BX.png) center/cover;
 }
-
 main #contact-container #contact {
   justify-content: space-between;
   height: 70%;
@@ -411,7 +429,6 @@ main #contact-container #contact {
   box-sizing: border-box;
   position: relative;
 }
-
 main #contact-container #contact .h2 {
   margin: 0;
   width: 143%;
@@ -421,12 +438,10 @@ main #contact-container #contact .h2 {
   justify-content: flex-end;
   transform: translateX(-30%);
 }
-
 main #contact-container #contact .h2 h2 {
   margin: 0 30px;
   width: unset;
 }
-
 main #contact-container #contact .shadow {
   transform: rotateY(180deg) rotate(-4deg);
   right: 0;
@@ -434,17 +449,15 @@ main #contact-container #contact .shadow {
   width: 200px;
   top: 13px;
 }
-
 main #contact-container #contact form {
   padding-top: 10%;
-  height: 100%;
+  height: 82%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 10% 10% 15% 38% 13%;
   grid-gap: 3%;
   grid-template-areas: "u-n f-n" "email phone" "subject subject" "message message" "btn btn";
 }
-
 main #contact-container #contact form label,
 main #contact-container #contact form input,
 main #contact-container #contact form textarea,
@@ -453,43 +466,36 @@ main #contact-container #contact form button {
   border: none;
   transition: 0.7s;
 }
-
 main #contact-container #contact form label:focus,
 main #contact-container #contact form input:focus,
 main #contact-container #contact form textarea:focus,
 main #contact-container #contact form button:focus {
   padding: 0 20px;
-  box-shadow: 0 0 8px 0 #4781bf;
+  box-shadow: 0 3px 10px -2px #4781bf;
   outline: none;
 }
-
 main #contact-container #contact form #user-name {
   grid-area: u-n;
   border-top-left-radius: 20px;
 }
-
 main #contact-container #contact form #first-name {
   grid-area: f-n;
   border-top-right-radius: 20px;
 }
-
 main #contact-container #contact form #email {
   grid-area: email;
 }
-
 main #contact-container #contact form #phone {
   grid-area: phone;
 }
-
 main #contact-container #contact form #subject {
   grid-area: subject;
 }
-
 main #contact-container #contact form #message {
   grid-area: message;
   padding-top: 10px;
+  resize: none;
 }
-
 main #contact-container #contact form button {
   grid-area: btn;
   border-radius: 0 0 20px 20px;
@@ -498,42 +504,78 @@ main #contact-container #contact form button {
   cursor: pointer;
 }
 
-/*////////////////// FOOTER  //////////////////*/
+/*!////////////////// FOOTER  //////////////////*/
 footer {
   background: #003366;
   padding: 10px 40px;
   position: relative;
 }
-
-footer hr {
-  position: absolute;
-  content: "";
-  width: 100%;
-  top: 70%;
-  height: 1px;
+footer #footer-nav #footer-top {
+  padding: 20px 0;
+}
+footer #footer-nav #footer-top img {
+  height: 60px;
+}
+footer #footer-nav #footer-top .social-icons {
+  width: 10vw;
+}
+footer #footer-nav hr {
+  height: 2px;
   border: none;
   background: linear-gradient(90deg, #003366 0%, #4781bf 50%, #003366 100%);
 }
-
-footer #footer-top {
-  padding: 20px 0;
-}
-
-footer #footer-top img {
-  height: 80px;
-}
-
-footer #footer-top .social-icons {
-  width: 10vw;
-}
-
 footer #author {
   text-align: right;
   color: #f8f8f1;
   padding: 20px 0;
 }
-
 footer #author a {
   color: #7ab9f0;
 }
+
+#pdf p {
+  padding: 20px 0;
+}
+
+/**************** @MEDIA *******************/
+@media screen and (max-width: 900px) {
+  main #about-container {
+    padding: 0 5%;
+    height: 70vw;
+    grid-template-rows: 13% 28% 27% 19% 13%;
+    grid-template-areas: ". ." "pict about" "pict about" "tools tools" ". .";
+  }
+  main #about-container {
+    height: 80vw;
+  }
+  main #about-container #picture {
+    justify-content: flex-start;
+  }
+  main #about-container #picture img {
+    transform: rotate(0);
+    height: 100%;
+  }
+  main #about-container #about .h2 {
+    width: 109.2%;
+  }
+  main #contact-container {
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 120vh;
+  }
+  main #contact-container #contact {
+    height: 60vw;
+    width: 70%;
+  }
+  main #contact-container #map {
+    width: 70%;
+    height: 20.83vw;
+  }
+
+  #footer-nav #footer-top .social-icons {
+    width: 20vw !important;
+  }
+}
+/*# sourceMappingURL=style.scss.map */
+
 /*# sourceMappingURL=style.css.map */
