@@ -7,6 +7,8 @@
         <li><a href="/index.php#productions-container">Réalisations</a></li>
         <li><a href="/index.php#about-container">A propos</a></li>
         <li><a href="/index.php#contact-container">Contact</a></li>
+      </ul>
+      <ul>
         <li><a href="/pages/cv.php">CV</a></li>
         <li><a href="/pages/hobbies.php">Intérêts</a></li>
       </ul>

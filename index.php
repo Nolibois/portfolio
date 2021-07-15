@@ -20,8 +20,8 @@
           <p>Intégration</p>
 
           <div>
-            <i class="far far-html5"></i>
-            <i class=""></i>
+            <i class="fab fa-html5"></i>
+            <i class="fab fa-css3-alt"></i>
           </div>
         </div>
       </div>
@@ -36,24 +36,27 @@
           <h3>"Gaming Campus"</h3>
           <p>Intégration</p>
           <div>
-            <i class="far far-html5"></i>
-            <i class=""></i>
+            <i class="fab fa-html5"></i>
+            <i class="fab fa-css3-alt"></i>
           </div>
         </div>
       </div>
 
       <div class="one-card-container">
         <?php demoScreen(
-          "https://nolibois.github.io/Print_3D_mobile_first/",
-          "assets\img\Print_3D.png",
-          "Lien vers Gaming Campus - Réalisation - Intégration Web"
+          "https://osteopathe-pessac.fr/index.php",
+          "assets\img\Emilie_carpe.png",
+          "Lien vers Emilie Carpe Ostéopathe - Réalisation - Intégration Web"
         ); ?>
         <div class="description">
-          <h3>"Print-3D"</h3>
-          <p>Contenu First method</p>
+          <h3>"Emilie Carpe Ostéopathe"</h3>
+          <p>Intégration</p>
+          <p>Développement Front et Back</p>
           <div>
-            <i class="far far-html5"></i>
-            <i class=""></i>
+            <i class="fab fa-html5"></i>
+            <i class="fab fa-sass"></i>
+            <i class="fab fa-js"></i>
+            <i class="fab fa-php"></i>
           </div>
         </div>
       </div>
